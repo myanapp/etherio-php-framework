@@ -2,5 +2,5 @@ RewriteEngine On
 Options -MultiViews -Indexes
 
 RewriteCond %{REQUEST_URI} (.+)/$
-# RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [L]
