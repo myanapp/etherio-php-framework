@@ -29,6 +29,8 @@ class Router {
 
         /*s adding respective Routes/... file to navigate relative page. */
         require_once __ROOT__ . '/' . $require;
+        \Route::$uri = $this->uri;
+        \Route::$method = $this->method;
         $this->routes = \Route::$routes;
         $this->response = $this->routes[$this->method][$this->uri] ?? false;
     }

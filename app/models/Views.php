@@ -13,7 +13,8 @@ class Views {
             
             if (!$this->app->route->response) {
                 http_response_code(404);
-                return print('{"status": 404, "response": "page not found"}');
+                print('{"status": 404, "response": "page not found"}');
+                exit;
             }
 
             if (is_callable($this->app->route->response)) {
@@ -24,7 +25,8 @@ class Views {
             
             if (!$this->app->route->response) {
                 http_response_code(404);
-                return print('<h2>page not found</h2>');
+                required(APP_VIEW_DIR, 'docs', '404.html');
+                exit;
             }
 
             if (is_callable($this->app->route->response)) {

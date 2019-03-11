@@ -1,7 +1,7 @@
 <?php
 
 class Route {
-    static $routes = array();
+    static $uri, $method, $routes = array();
     static function get($path, $method) {
         self::$routes['GET'][$path] = $method;
     }
