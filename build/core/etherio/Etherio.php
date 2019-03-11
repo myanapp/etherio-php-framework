@@ -5,7 +5,7 @@ namespace Core\Etherio;
 class Etherio {
     
     public function router() {
-        return new \Core\Etherio\Components\Router($this);
+        return new \Core\Etherio\Components\Router();
     }
 
     public function views() {
