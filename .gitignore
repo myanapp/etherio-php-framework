@@ -1,0 +1,9 @@
+# macOS Folder Cached
+.DS_Store
+
+# Ignore file or directory from Current_Directory
+/.env
+/vendor
+
+# Ignore all "log" files
+*.log
