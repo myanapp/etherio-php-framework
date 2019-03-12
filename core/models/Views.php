@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
-class Views {
-    function __construct($app) {
-       $this->app = $app;
+class Views
+{
+    public function __construct($app)
+    {
+        $this->app = $app;
     }
 
-    function render() {
+    public function render()
+    {
         if ($this->app->route->api) {
             header('Content-Type: application/json; charset=UTF-8');
             
@@ -20,7 +23,7 @@ class Views {
             if (is_callable($this->app->route->response)) {
                 $this->app->response = json_encode(call_user_func($this->app->route->response));
             }
-        }else{
+        } else {
             header('Content-Type: text/html; charset=UTF-8');
             
             if (!$this->app->route->response) {
@@ -32,6 +35,6 @@ class Views {
             if (is_callable($this->app->route->response)) {
                 $this->app->response = call_user_func($this->app->router->response);
             }
-        }  
+        }
     }
 }

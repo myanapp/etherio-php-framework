@@ -4,8 +4,10 @@ namespace Core\Etherio\Components;
 
 use \Core\Etherio\Components\Route;
 
-class Router {
-    public function __construct() {
+class Router
+{
+    public function __construct()
+    {
         // assigning to GLOBAL callable variables for REQUESTED URI and METHOD
         $this->method = $_SERVER['REQUEST_METHOD'];
         $this->uri = urldecode(

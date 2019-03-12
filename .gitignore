@@ -1,9 +1,11 @@
 # macOS Folder Cached
 .DS_Store
 
-# Ignore file or directory from Current_Directory
-/.env
+# VSCode Editor Configuration
+/.vscode
+/.php_cs.cache
+
+# Ignore Packages Library
 /vendor
 
-# Ignore all "log" files
 *.log

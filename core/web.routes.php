@@ -8,6 +8,6 @@ Route::get('/account', function () {
     return 'account';
 });
 
-Route::get('/hello', 'login');   
+Route::get('/hello', 'login');
 
 Route::post('/account', 'login');
