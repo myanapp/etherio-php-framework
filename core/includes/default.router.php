@@ -12,20 +12,28 @@ switch ($_SERVER[PATH_INFO]) {
         echo file_get_contents(__ROOT__ . '/public/favicon.ico');
         break;
     default:
-        path($mime, ER_SOURCE . '/docs/404.html');
+        path($mime, ER_SOURCE . '/404.html');
 }
 
 function index()
-{ }
+{
+    http_response_code(200);
+    header('Content-Type: text/html; charset=UTF-8');
+    require_once ER_SOURCE . '/docs/index.html';
+}
 
-function path($mime, $error)
+function path($mime, $error, $res = 200)
 {
     $file = pathinfo($_SERVER[PATH_INFO]);
     $ext = $file[extension];
-    $r = $mime[$ext];
-    $src = ER_SOURCE . $r[1] . $_SERVER[PATH_INFO];
+    $mime = $mime[$ext];
+    $src = ER_SOURCE . $_SERVER[PATH_INFO];
 
-    if (!is_file($src)) error_404($src, $error);
+    if (!is_file($src)) return error_404($src, $error);
+
+    http_response_code($res);
+    header("Content-Type: $mime; charset=UTF-8");
+    require_once $src;
 }
 
 function error_404($path = 0, $src)

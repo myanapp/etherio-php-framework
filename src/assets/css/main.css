@@ -1,20 +1,156 @@
-.container {
-    max-width: 80.0rem;
-    padding-bottom: 7.5rem;
-    padding-top: 7.5rem;
+body {
+    overflow-x: hidden;
+    overflow-style: none;
 }
 
-#home {
-    background: #f4f5f6;
+.logocon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
     height: 100vh;
-    position: relative;
-    max-height: 100vh;
-    min-width: 100vw;
+    background: #e61919;
+    animation: color 30s linear infinite;
+    user-select: none;
+    position: absolute;
+    z-index: 3;
 }
 
-.thumbnail {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.menu {
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #ccc;
+    text-align: center;
+    line-height: 50px;
+    font: 300 32px Comfortaa;
+}
+
+a {
+    padding: 5px 10px;
+    border: 1px solid;
+    border-radius: 30px;
+    font-family: Comfortaa;
+    color: #f39;
+    transition: background 0.3s;
+}
+
+a:hover {
+    background: #f39;
+    color: #fff;
+    border: 0;
+}
+
+.logo {
+    font: 300 150px Comfortaa;
+    color: #fff;
+    cursor: default;
+}
+
+.hint {
+    position: fixed;
+    z-index: 4;
+    bottom: 10vh;
+    width: 100vw;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font: 300 30px Comfortaa;
+}
+
+.content {
+    padding: 30px;
+    position: relative;
+    top: 20vh;
+    height: 200vh;
+    font: 16px Ubuntu;
+}
+
+@-moz-keyframes color {
+    0% {
+        background: #e61919;
+    }
+
+    25% {
+        background: #80e619;
+    }
+
+    50% {
+        background: #19e5e6;
+    }
+
+    75% {
+        background: #7f19e6;
+    }
+
+    100% {
+        background: #e61919;
+    }
+}
+
+@-webkit-keyframes color {
+    0% {
+        background: #e61919;
+    }
+
+    25% {
+        background: #80e619;
+    }
+
+    50% {
+        background: #19e5e6;
+    }
+
+    75% {
+        background: #7f19e6;
+    }
+
+    100% {
+        background: #e61919;
+    }
+}
+
+@-o-keyframes color {
+    0% {
+        background: #e61919;
+    }
+
+    25% {
+        background: #80e619;
+    }
+
+    50% {
+        background: #19e5e6;
+    }
+
+    75% {
+        background: #7f19e6;
+    }
+
+    100% {
+        background: #e61919;
+    }
+}
+
+@keyframes color {
+    0% {
+        background: #e61919;
+    }
+
+    25% {
+        background: #80e619;
+    }
+
+    50% {
+        background: #19e5e6;
+    }
+
+    75% {
+        background: #7f19e6;
+    }
+
+    100% {
+        background: #e61919;
+    }
 }
