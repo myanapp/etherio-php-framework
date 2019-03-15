@@ -1,0 +1,46 @@
+#!/usr/bin/env php
+<?php
+
+const DEF = [
+    'git add .',
+];
+
+const HEROKU = [
+    'git commit -am "auto commited"',
+    'git push heroku master',
+    'heroku open',
+];
+
+const GITHUB = [
+    'git commit -m "auto commited"',
+    'git push -u origin master',
+];
+
+if ($argc > 1) {
+    $cmd = $argv[1];
+
+    switch ($cmd) {
+        case 'gh':
+            $res = array_merge(DEF, GITHUB);
+            break;
+        case 'heroku':
+            $res = array_merge(DEF, HEROKU);
+            break;
+        default:
+            w("Command $cmd not found!");
+            exit;
+    }
+
+    exec(
+        w(join(' && ', $res))
+    );
+}
+
+exit;
+
+function w($txt)
+{
+    if (is_array($txt)) $txt = join(' && ', $txt);
+    echo PHP_EOL, $txt . PHP_EOL, PHP_EOL;
+    return $txt;
+};
