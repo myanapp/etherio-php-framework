@@ -1,0 +1,13 @@
+{
+    "short_name": "Etherio",
+    "name": "Ethereal's Etherio",
+    "icons": [{
+        "src": "/assets/img/icon-400x400.png",
+        "type": "image/png",
+        "sizes": "400x400"
+    }],
+    "start_url": "/?pwa=true",
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "theme_color": "#3367D6"
+}

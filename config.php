@@ -21,5 +21,8 @@ return [
     MIME => [
         'js' => 'text/javascript',
         'css' => 'text/css',
+        'json' => 'application/json',
+        'png' => 'image/png',
+        'jpg' => 'image/jpeg',
     ]
 ];
