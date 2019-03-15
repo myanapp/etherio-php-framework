@@ -24,11 +24,13 @@ $pdo = new PDO("pgsql:" . sprintf(
     ltrim($db["path"], "/")
 ));
 
-$data = $pdo->query(urldecode($_GET['sql']) ?? '');
 
 $db['user'] = '{{protected}}';
 $db['pass'] = '{{protected}}';
 
+$data[] = $pdo->prepare(urldecode($_GET['sql']) ?? '');
+$data[] = $pdo->bindValue(urldecode($_GET['bind']) ?? '');
+$data[] = $pdo->execute();
 
 print_r(
     json_encode([$db, $pdo, $data], JSON_PRETTY_PRINT)
