@@ -6,13 +6,24 @@
  * @author Shin Maung Maung <ethereal97@gmail.com>
  */
 
-error_reporting(E_ALL);
+error_reporting($_GET['error'] ?? E_ERROR);
 ini_set('display_errors', true);
 ini_set('display_start_up_errors', true);
 ini_set('html_errors', false);
 
 $server = require_once __DIR__ . '/../app/autoload.php';
 
-$db = pg_connect('postgres://otjeumaqejyauk:647ddb59dfa2a0549add230481405146f89511eb6cca74991db6e6e8a45e82e5@ec2-50-19-109-120.compute-1.amazonaws.com:5432/da5mp219si4bfv', $username, $password);
+$db = parse_url(getenv("DATABASE_URL"));
 
-print_r($db);
+$pdo = new PDO("pgsql:" . sprintf(
+    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+    $db["host"],
+    $db["port"],
+    $db["user"],
+    $db["pass"],
+    ltrim($db["path"], "/")
+));
+
+print_r(
+    json_encode($db, JSON_PRETTY_PRINT)
+);
