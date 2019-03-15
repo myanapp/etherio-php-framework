@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        <?=file_get_contents(__DIR__ . '/../css/reset.css') ?>
+        <?=file_get_contents(ER_SOURCE . ER_ENV[MIME]['css'][1] . '/creset.css') ?>
     </style>
 
     <style>
-        <?=file_get_contents(__DIR__ . '/../css/error.css') ?>
+        <?=file_get_contents(ER_SOURCE . ER_ENV[MIME]['css'][1] . '/error.css') ?>
     </style>
 </head>
 
 <body>
 
-    <?=file_get_contents(__DIR__.'/../img/404-triangle.svg') ?>
+    <?=file_get_contents(ER_SOURCE . '/img/404-triangle.svg') ?>
 
 
     <div class="message-box">

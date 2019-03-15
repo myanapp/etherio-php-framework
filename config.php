@@ -9,9 +9,15 @@
  * 
  */
 
+define('__ROOT__', __DIR__);
+
 return [
     ADMIN => 'Admin <admin@myan.app>',
     DIR => [
-        ROOT => __DIR__,
+        SRC => __DIR__ . '/src',
+    ],
+    MIME => [
+        'js' => ['text/javascript', '/assets/js'],
+        'css' => ['text/css', '/assets/css'],
     ]
 ];
