@@ -1,4 +1,5 @@
 <?php
+
 define('ER_ENV', $env);
 define('ER_SOURCE', $env[DIR][SRC]);
 define('ER_VIEW_DIR', $env[DIR][VIEW]);
