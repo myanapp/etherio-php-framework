@@ -12,10 +12,11 @@
 define('__ROOT__', __DIR__);
 
 return [
-    ADMIN => 'Admin <admin@myan.app>',
+    WEBMASTER => 'Admin <admin@myan.app>',
     DIR => [
-        VIEW => __DIR__ . '/src/docs',
-        SRC => __DIR__ . '/src',
+        'SRC' => __DIR__ . '/src',
+        'VIEW' => __DIR__ . '/src/docs',
+        'WEB' => __DIR__ . '/public',
     ],
     MIME => [
         'js' => 'text/javascript',

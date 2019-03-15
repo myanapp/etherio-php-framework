@@ -2,7 +2,7 @@
 $_SERVER = array_merge($_ENV, $_SERVER);
 
 // Setting Variable from ($env) settings...
-$_SERVER[SERVER_ADMIN] = $env[ADMIN] ?? 'Webmaster <admin@webmaster.com>';
+$_SERVER[SERVER_ADMIN] = ER_SOURCE[WEBMASTER] ?? 'Webmaster <admin@webmaster.com>';
 
 // URL - PATH_INFO
 $_SERVER[PATH_INFO] = urldecode(
