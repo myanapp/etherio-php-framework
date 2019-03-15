@@ -1,23 +1,37 @@
 <?php
 
 /**
- * ETHERIO PHP FRAMEWORK - Development for personal PHP Coding Experience...
+ * =======================================================================
+ * ETHERIO PHP FRAMEWORK - Development for personal PHP Coding Experience
+ * =======================================================================
  * @copyright  2019, Ethereal.
  * @author Shin Maung Maung <ethereal97@gmail.com>
+ * 
  */
 
-require_once __DIR__ . '/build/dev/debugs.php';
+error_reporting(E_ERROR & ~E_NOTICE);
+ini_set('display_errors', true);
+ini_set('display_start_up_errors', true);
+ini_set('html_errors', true);
 
-if ($inc_c < 1) {
-    require_once __DIR__ . '/public/index.php';
-}
+/** 
+ *** Self-Initiate Function and Get Return Value ***
+ * to perform like MOD_REWRITE_ON on LOCAL_DEV_ENV */
 
-$log = __DIR__ . '/tmp/debug.log';
+$is_virtual = (function (string $idx) {
+    $regex = '/' . preg_quote($idx, '/') . '/'; //* create input_string into regular_expression
+    foreach (get_included_files() as $ini) //* to filter all included_files before this sections
+        if (preg_match($regex, $ini)) $index = 1; //* and search all match_case with input_string
+    return isset($index) ? false : require_once __DIR__ . $idx; //* if there were input_string is_existed: return "FALSE"; or: require "input_string";
+})('/public/index.php');
 
-log_file(
-    $log,
-    ls_included(0),
-    trace_logs(0)
-);
 
-echo file_get_contents($log);
+/** 
+ *** Importing Required Modules ***
+ */
+
+$env = require_once __DIR__ . '/config.php';
+$app = require_once __DIR__ . '/core/build.php';
+
+echo '<pre>';
+echo json_encode($_SERVER, JSON_PRETTY_PRINT);
