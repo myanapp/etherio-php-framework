@@ -1,8 +1,0 @@
-{
-    "name": "etherio/etherio",
-    "description": "Etherio PHP Framework",
-    "require": {},
-    "require-dev": {},
-    "minimum-stability": "dev",
-    "prefer-stable": true
-}

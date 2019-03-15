@@ -6,4 +6,4 @@
  * @author Shin Maung Maung <ethereal97@gmail.com>
  */
 
-$server = require_once __DIR__ . '/../app/autoload.php';
+require_once __DIR__ . '/../server.php';
