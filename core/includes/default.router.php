@@ -3,7 +3,17 @@
 // if (!is_dir(ER_SOURCE)) die(ER_SOURCE . ' is not a directory...');
 $mime = ER_ENV[MIME];
 
-$_SERVER[PATH_INFO] === '/' ? index() : path($mime, ER_SOURCE . '/docs/404.html');
+switch ($_SERVER[PATH_INFO]) {
+    case '/':
+        index();
+        break;
+    case '/favicon.ico':
+        header('Content-Type: image/x-icon');
+        echo file_get_contents(__ROOT__ . '/public/favicon.ico');
+        break;
+    default:
+        path($mime, ER_SOURCE . '/docs/404.html');
+}
 
 function index()
 { }
