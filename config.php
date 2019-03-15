@@ -10,6 +10,7 @@
  */
 
 return [
+    ADMIN => 'Admin <admin@myan.app>',
     DIR => [
         ROOT => __DIR__,
     ]

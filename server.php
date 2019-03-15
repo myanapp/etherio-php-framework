@@ -14,6 +14,8 @@ ini_set('display_errors', true);
 ini_set('display_start_up_errors', true);
 ini_set('html_errors', true);
 
+header('Content-Type: text/plain');
+
 /** 
  *** Self-Initiate Function and Get Return Value ***
  * to perform like MOD_REWRITE_ON on LOCAL_DEV_ENV */
@@ -33,5 +35,4 @@ $is_virtual = (function (string $idx) {
 $env = require_once __DIR__ . '/config.php';
 $app = require_once __DIR__ . '/core/build.php';
 
-echo '<pre>';
 echo json_encode($_SERVER, JSON_PRETTY_PRINT);
