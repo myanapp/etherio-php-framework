@@ -24,6 +24,10 @@ $pdo = new PDO("pgsql:" . sprintf(
     ltrim($db["path"], "/")
 ));
 
+$db['user'] = '{{protected}}';
+$db['pass'] = '{{protected}}';
+
+
 print_r(
-    json_encode($db, JSON_PRETTY_PRINT)
+    json_encode([$db, $pdo], JSON_PRETTY_PRINT)
 );
