@@ -24,7 +24,7 @@ $pdo = new PDO("pgsql:" . sprintf(
     ltrim($db["path"], "/")
 ));
 
-$data = $pdo->query('SELECT * FROM *');
+$data = $pdo->query(urldecode($_GET['sql']) ?? '');
 
 $db['user'] = '{{protected}}';
 $db['pass'] = '{{protected}}';
