@@ -12,6 +12,5 @@
 return [
     DIR => [
         ROOT => __DIR__,
-
     ]
 ];
