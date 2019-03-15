@@ -9,7 +9,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 ini_set('display_start_up_errors', true);
-ini_set('html_errors', true);
+ini_set('html_errors', false);
 
 $server = require_once __DIR__ . '/../app/autoload.php';
 
